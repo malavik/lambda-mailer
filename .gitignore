@@ -1,4 +1,5 @@
 .env
 deploy.env
 event.json
+context.json
 node_modules
