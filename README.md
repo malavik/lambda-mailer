@@ -1,5 +1,5 @@
 # :envelope: lambda-mailer
-AWS Lambda for sending emails. Ready for deployment in 60 seocnds.
+AWS Lambda for sending emails. Ready for deployment in 60 seconds.
 
 This lambda gives your browser (or any client) a backend for sending emails.
 
@@ -27,7 +27,7 @@ cd  lambda-mailer
 npm install
 
 // create deployment files (to hold your env vars)
-touch .env deploy.env event.json
+node-lambda setup
 ```
 
 `.env` file is used by your local machine to test and deploy the lambda, `deploy.env` is used by your lambda function after deployment. So there might be some duplicate env vars.
@@ -49,10 +49,6 @@ AWS_TIMEOUT=60
 AWS_DESCRIPTION=your_lambda_description
 AWS_RUNTIME=nodejs
 CONFIG_FILE=deploy.env
-
-EMAIL_SERVICE=gmail
-EMAIL_SERVICE_USER=username@gmail.com
-EMAIL_SERVICE_PASS=password
 
 ```
 
@@ -214,3 +210,5 @@ Here's the full list of options you can pass in your event:
   - **messageId** - optional Message-Id value, random value will be generated if not set
   - **date** - optional Date value, current UTC string will be used if not set
   - **encoding** - optional transfer encoding for the textual parts
+
+
