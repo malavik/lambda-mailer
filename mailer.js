@@ -42,7 +42,7 @@ module.exports.run = function(event, context, cb) {
 
   var handleResponse = function(info) {
     console.log('Message sent: ' + info.response);
-    return cb(null, {message: 'Yaay success'});
+    return cb(null,'Yaay success');
   };
 
   template.render(event.context)
