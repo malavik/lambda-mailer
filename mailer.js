@@ -41,8 +41,8 @@ module.exports.run = function(event, context, cb) {
   };
 
   var handleResponse = function(info) {
-    console.log('Message sent: ' + info.response);
-    return cb(null,'Yaay success');
+    console.log('Callback Message sent: ' + info.response);
+    return cb(null,'Yaay callback success');
   };
 
   template.render(event.context)
