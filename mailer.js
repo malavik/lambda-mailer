@@ -18,7 +18,7 @@ module.exports.run = function(event, context, cb) {
     return cb(new Error('EMAIL_SERVICE_PASS env var not set'));
   }
 
-  var templateDir = path.join(__dirname, 'templates', event.template);
+  var templateDir = path.join(__dirname, 'templates', event.language);
   var template = new EmailTemplate(templateDir);
 
   Promise.promisifyAll(template);
