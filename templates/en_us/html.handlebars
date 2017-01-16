@@ -1,5 +1,9 @@
-<h1> Hi! {{first_name}} {{middle_name}} {{last_name}} </h1>
+<h1> Hi! {{context.first_name}} {{context.middle_name}} {{context.last_name}} </h1>
 <h2>
-First image here: <img src="cid:screenshot1"/><br/>
-Second image here: <img src="cid:screenshot2"/>
+First image here: <img src="cid:screenshot1"/> <br/>
+Second image here: <img src="cid:screenshot2"/> <br/>
+
+Your questionnaire Answers are {{questionnaireAnswers.interests}} <br/>
+Pool depth : {{poolSelection.depth}} <br/>
+Pool model : {{poolSelection.model}}
 </h2>

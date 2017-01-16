@@ -36,7 +36,20 @@ module.exports.run = function(event, context, cb) {
 
     event.text = result.text;
     event.html = result.html;
+    event.to = event.userEmail;
+    event.from = event.dealerEmail;
 
+    //var mailOptions = event;
+
+    /*{
+    from: "Fred Foo ✔ <foo@blurdybloop.com>", // sender address
+    to: "malavikam@realityi.com", // list of receivers
+    subject: "Hello ✔", // Subject line
+    text: "Hello world ✔", // plaintext body
+    html: "<b>Hello world ✔</b>" // html body
+}
+*/
+    //return transporter.sendMailAsync(mailOptions);
     return transporter.sendMailAsync(event);
   };
 
@@ -45,7 +58,7 @@ module.exports.run = function(event, context, cb) {
     return cb(null,'Yaay callback success');
   };
 
-  template.render(event.context)
+  template.render(event)
     .then(sendMail)
     .then(handleResponse)
     .catch(function(e) {
